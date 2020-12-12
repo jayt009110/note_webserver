@@ -1,5 +1,6 @@
 package com.webserver.core;
 
+import com.webserver.http.EmptyRequestException;
 import com.webserver.http.HttpRequest;
 import com.webserver.http.HttpResponse;
 
@@ -48,6 +49,8 @@ public class ClientHandler implements Runnable{
             //响应客户端
             response.flush();
 
+        } catch (EmptyRequestException e){
+            //单独 空请求异常，到那时不需要任何处理，捕获的意义在于忽略处理操作
         } catch (Exception e) {
             e.printStackTrace();
         }finally {

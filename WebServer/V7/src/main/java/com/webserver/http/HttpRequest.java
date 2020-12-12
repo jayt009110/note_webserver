@@ -25,7 +25,7 @@ public class HttpRequest {
     //消息正文
 
     private Socket socket;
-    public HttpRequest(Socket socket){
+    public HttpRequest(Socket socket) throws EmptyRequestException {
         System.out.println("httprequest:开始解析请求");
 
         this.socket = socket;
@@ -39,10 +39,13 @@ public class HttpRequest {
 
         System.out.println("请求解析完毕");
     }
-    private void parseRequest(){
+    private void parseRequest() throws EmptyRequestException {
         try {
             System.out.println("httprequest:开始解析请求行");
             String line = readLine();
+            if(line.isEmpty()){
+                throw new EmptyRequestException("request为空");
+            }
             System.out.println("请求行:" + line);
 
             String[] str = line.split("\\s");
@@ -100,14 +103,17 @@ public class HttpRequest {
     }
 
     public String getMethod() {
+
         return method;
     }
 
     public String getUri() {
+
         return uri;
     }
 
     public String getProtocol() {
+
         return protocol;
     }
 

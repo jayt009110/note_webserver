@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<List>
+    <emp id="1">
+        <name>张三</name>
+        <age>22</age>
+        <salary>3333</salary>
+        <gender>男</gender>
+    </emp>
+    <emp id="2">
+        <name>李四</name>
+        <age>24</age>
+        <salary>55564</salary>
+        <gender>女</gender>
+    </emp>
+    <emp id="3">
+        <name>王五</name>
+        <age>27</age>
+        <salary>5000</salary>
+        <gender>男</gender>
+    </emp>
+    <dd>
+        <horse>黑马</horse>
+        <tiger>老虎</tiger>
+    </dd>
+</List>

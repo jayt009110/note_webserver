@@ -1,0 +1,19 @@
+本版本对响应进一步重构,
+首先解决一个问题:ClientHandler每次处理请求时在设置response的响应头Content-Type之前都要先创建一个
+Map保存资源后缀与对应的Content-Type的值，这是没有必要的，因为这个Map的内容时固定不变的，因此全局
+一份即可，并且里面的内容都是HTTP中定义好的，所以我们专门定义一个类来保存所有HTTP协议规定的不变的
+内容
+
+
+实现:
+1.在com.webserver.http包下新建一个类:HttpContext
+2.在HttpContext下新建一个静态的属性Map mimeMapping用于保存所有资源后缀与Content-Type的值
+3.初始化这个Map并提供一个静态方法getMimeType方法可以根据资源后缀名获取Content-Type的值
+4.ClientHandler改为通过这个Map获取Content-Type的值并设置对应的响应头
+
+ClientHandler还有一个操作可以被重用，在处理请求的环节，当我们将正文文件设置到response后总是
+还要添加两个说明正文的响应头Content-Type和Content-Length,既然；两个头和正文时密切相关的，我们
+完全可以将设置这两个响应头的操作放在HttpResponse的setEntity方法中，这样一来只需要将正文文件设置好
+就可以了，两个文件旧自动被添加了.
+
+实现:将设置Content-Type和Content-Length的工作放到HttpResponse的setEntity中

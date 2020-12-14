@@ -1,6 +1,7 @@
 package com.webserver.core;
 
 import com.webserver.http.EmptyRequestException;
+import com.webserver.http.HttpContext;
 import com.webserver.http.HttpRequest;
 import com.webserver.http.HttpResponse;
 
@@ -27,7 +28,7 @@ public class ClientHandler implements Runnable{
 
         try {
             //解析请求
-            Map<String,String> map = new HashMap<>();
+
             HttpRequest request = new HttpRequest(socket);
             HttpResponse response = new HttpResponse(socket);
             //处理请求
@@ -37,19 +38,9 @@ public class ClientHandler implements Runnable{
             if(file.exists()&&file.isFile()){
                 System.out.println("该资源已找到！！");
                 System.out.println(file.getName());
-                int n = file.getName().lastIndexOf(".");
-                String suffix = file.getName().substring(n+1);
-                System.out.println(suffix);
                 response.setEntity(file);
-                map.put("html","text/html");
-                map.put("css","text/css");
-                map.put("js","application/javascript");
-                map.put("png","image/png");
-                map.put("jpg","image/jpeg");
-                map.put("gif","image/gif");
                 //根据正文文件设置响应头
-                response.putHeaders("Content-Type",map.get(suffix));
-                response.putHeaders("Content-Length",file.length()+"");
+
             }
             else {
                 //响应404
@@ -58,8 +49,7 @@ public class ClientHandler implements Runnable{
                 response.setStatusCode(404);
                 response.setStatusReason("NotFound");
                 response.setEntity(not_found);
-                response.putHeaders("Content-Type","text/html");
-                response.putHeaders("Content-Length",not_found.length()+"");
+
             }
             response.putHeaders("Server","WebServer");
             //响应客户端

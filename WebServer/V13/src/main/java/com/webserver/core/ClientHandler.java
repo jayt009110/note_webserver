@@ -4,6 +4,8 @@ import com.webserver.http.EmptyRequestException;
 import com.webserver.http.HttpContext;
 import com.webserver.http.HttpRequest;
 import com.webserver.http.HttpResponse;
+import com.webserver.servlet.ChangePassword;
+import com.webserver.servlet.LoginServlet;
 import com.webserver.servlet.RegServlet;
 
 import java.io.*;
@@ -40,6 +42,14 @@ public class ClientHandler implements Runnable{
                 //完成注册业务
                     RegServlet servlet = new RegServlet();
                     servlet.service(request,response);
+            }
+            else if ("/myweb/loginUser".equals(path)){
+                LoginServlet loginServlet = new LoginServlet();
+                loginServlet.service(response,request);
+            }
+            else if("/myweb/changePassword".equals(path)){
+                ChangePassword changePassword = new ChangePassword();
+                changePassword.service(request,response);
             }
             else {
                 //根据抽象路径取webapps下找到对应的资源

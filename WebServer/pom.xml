@@ -21,6 +21,7 @@
         <module>V14</module>
         <module>V15</module>
         <module>V16</module>
+        <module>V17</module>
     </modules>
     <properties>
         <!-- 设置 JDK 版本为 1.8 -->
@@ -44,6 +45,11 @@
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf</artifactId>
             <version>3.0.11.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
         </dependency>
     </dependencies>
 

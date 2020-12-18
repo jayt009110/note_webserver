@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * 使用当前类测试Object中常见方法
  */
-public class Point {
+public class  Point {
     private int x;
     private int y;
 

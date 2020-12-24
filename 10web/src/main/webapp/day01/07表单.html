@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body>
+    <!--action:请求地址-->
+    <form action="http://www.tmooc.cn">
+        <!--所有控件必须写name属性，否则不会提交参数-->
+        <!--文本框:placeholder 占位文本 manxlength最大字符长度-->
+        <!--value:设置默认值
+            readonly:只读-->
+        用户名：<input type="text" name="username" placeholder="请输入用户名"
+                  value="llf" readonly="readonly" ><br>
+        密码：<input type="password" name="password"
+            placeholder="请输入密码"><br>
+        <!--多个单选框必须有相同的name属性
+            单选框中的value必须加否则提交的内容为on
+            checked设置选中
+            -->
+        性别: <input id="r1" type="radio" name="gender"  value="m">
+                <label for="r1">男</label>
+        <input id="r2" type="radio" name="gender" value="w">
+        <label for="r2">女</label><br>
+        <!--多选框:属性和单选框通用-->
+        兴趣爱好:<input id="r3" type="checkbox" name="hobby" value="cy">
+        <label for="r3">抽烟</label>
+        <input id="r4"type="checkbox" name="hobby" value="hj">
+        <label for="r4">喝酒</label>
+        <input id="r5" type="checkbox" name="hobby" value="tt">
+        <label for="r5">烫头<br></label>
+        <!--日期选择器-->
+        出生日期: <input type="date" name="birthday"><br>
+        <!--文件选择器-->
+        靓照:<input type="file" name="pic"><br>
+        <!--下拉选-->
+        所在地:
+        <select name="city" >
+            <option value="bj">北京</option>
+            <option value="sh">上海</option>
+            <!--selected 默认选中与checked意义相同-->
+            <option value="gz" selected="selected">广州</option>
+        </select><br>
+        <!--文本域 获取用户输入的多行文本-->
+        个人简介:
+        <textarea name="intro"  cols="30" rows="10" placeholder="说点什么"></textarea><br>
+        <input type="reset">
+        <input type="submit" value="注册">
+        <!--自定义按钮-->
+        <input type="button" value="自定义按钮">
+    </form>
+    </body>
+</html>

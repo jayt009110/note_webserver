@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*属性选择器*/
+        input[type='submit']{
+            background-color: red;
+        }
+        /*子孙后代选择器
+           匹配body里面div里面所有的子元素span以及后代span
+        */
+        /*body div div span{
+            color: red;
+        }*/
+        /*子元素选择器*/
+        body>span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<a href="01作业1.html">超链接1</a>
+<a href="02作业2.html">超链接2</a>
+<a href="03分区标签.html">超链接3</a>
+<a href="04CSS引入方式.html">超链接4</a>
+<hr>
+<input type="submit" value="登陆">
+<input type="reset">
+<span>s1</span>
+<div>
+    <span>s2</span>
+    <div>
+        <span>s3</span>
+    </div>
+    <div>
+        <span>s4</span>
+        <div>
+            <span>s5</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

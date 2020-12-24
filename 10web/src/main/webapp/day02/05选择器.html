@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d2{
+            color: darkred;
+        }
+        /*类选择器*/
+        .c1{
+            color: aqua;
+        }
+        /*分组选择器*/
+        #d2,.c1,h2{
+            /*背景颜色*/
+            background-color: black;
+        }
+        *{
+            /*边框:粗细 实线样式 颜色*/
+            border: 3px solid rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+<div>div1</div>
+<div id="d2">div2</div>
+<div class="c1">div3</div>
+<span>span1</span>
+<span class="c1">span2</span>
+<span>span3</span>
+<h1>h1</h1>
+<h2>h2</h2>
+<h3 class="c1">h3</h3>
+</body>
+</html>

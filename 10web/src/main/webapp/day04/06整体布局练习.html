@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body>div{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        div>div>div{
+            background-color: #e8e8e8;
+        }
+        #t_left{
+            width: 611px;
+            height: 376px;
+            float: left;
+        }
+        #t_right{
+            width: 375px;
+            height: 376px;
+            float: right;
+        }
+        #top_div,#bottom_div{
+            overflow: hidden;/*为了避免高度识别为0的显示异常*/
+        }
+
+        #b_left{
+            width: 366px;
+            height: 233px;
+            float: left;
+        }
+        .b_right{
+            width: 198px;
+            height: 233px;
+            float: right;
+            margin-left: 12px;
+        }
+        #top_div{
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="top_div">
+            <div id="t_left"></div>
+            <div id="t_right"></div>
+        </div>
+        <div id="bottom_div">
+            <div id="b_left"></div>
+            <div class="b_right"></div>
+            <div class="b_right"></div>
+            <div class="b_right"></div>
+        </div>
+    </div>
+</body>
+</html>

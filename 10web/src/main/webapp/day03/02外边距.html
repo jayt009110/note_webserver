@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            /*单独某一个方向添加外边距*/
+            /*margin-top: 100px;
+            margin-left: 50px;
+            margin-bottom: 100px;*/
+           /* margin: 50px;*//*四个方向50px*/
+            /*margin: 30px 40px;*//*上下30.左右40*/
+           /* margin: 0 auto;*//*上下0，左右居中*/
+            margin: 50px;/*上右下左顺时针*/
+        }
+        #d2{
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            margin: 50px;
+        }
+        span{
+            border: 1px solid red;
+        }
+        #s1{
+            /*左右相邻两个元素彼此添加外边距，外边距相加*/
+            margin-right: 20px;
+        }
+        #s2{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<span id="s1">span1</span>
+<span id="s2">span2</span>
+<div id="d1">div1</div>
+<div id="d2">div2</div>
+</body>
+</html>
